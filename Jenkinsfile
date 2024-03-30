@@ -5,6 +5,13 @@ pipeline {
     agent any
 
     stages {
+/*
+//
+//no need the clone as it had been define and set when the job being created using the jenkins UI
+//If set something from Jenkins UI, you will not see it here so if you define and creating the clone stage again it will be duplicated
+//One way to notice this is when running the job, watch the console and will notice it.
+//So remember that if set in the UI to checkout from git already, then Jenkinsfile no need to add again.
+//
 	stage('Cloning Repo') {
 	    steps {
 		script {
@@ -12,7 +19,7 @@ pipeline {
 		}
 	    }
 	}
-
+*/
 	stage('CD - Update Manifest with new version number for the newly built image') {
 		//parameters {
         	//	string(defaultValue: '0', description: 'This is a parameter', name: 'IMAGE_TAG')
