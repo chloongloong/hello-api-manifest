@@ -1,7 +1,7 @@
 pipeline {
-    environment {
-	IMAGE_TAG = ''
-    }
+    //environment {
+//	IMAGE_TAG = ''
+ //   }
     agent any
 
     stages {
