@@ -34,7 +34,7 @@ pipeline {
 		steps {
 			script {
 				sh """
-				    echo $IMAGE_TAG
+				    echo ${param.IMAGE_TAG}
 				    pwd
 				    ls -lrt
 				    cat deployment-hello-hapi.yaml
