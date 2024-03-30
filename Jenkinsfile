@@ -7,7 +7,7 @@ pipeline {
     stages {
 	stage('Cloning Repo') {
 	    steps {
-		git 'https://github.com/chloongloong/hello-api-manifest.git'
+		git branch: 'main', 'https://github.com/chloongloong/hello-api-manifest.git'
 	    }
 	}
 
