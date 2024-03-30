@@ -1,7 +1,13 @@
 pipeline {
+/*
     environment {
 	IMAGE_TAG = '0'
     }
+*/
+    parameters {
+      	string(defaultValue: '0', description: 'This is a parameter', name: 'IMAGE_TAG')
+    }
+
     agent any
 
     stages {
