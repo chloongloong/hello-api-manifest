@@ -30,20 +30,20 @@ pipeline {
 		//parameters {
         	//	string(defaultValue: '0', description: 'This is a parameter', name: 'IMAGE_TAG')
     		 //   }
-
+ 
 		steps {
 			script {
 				sh """
-				    echo ${param.IMAGE_TAG}
+				    echo ${params.IMAGE_TAG}
 				    pwd
 				    ls -lrt
 				    cat deployment-hello-hapi.yaml
-				    #sed -i 's/hello-hapi:.*/hello-hapi:'"$IMAGE_TAG"'/g' deployment-hello-hapi.yaml
+				    #sed -i 's/hello-hapi:.*/hello-hapi:'"${params.IMAGE_TAG}"'/g' deployment-hello-hapi.yaml
 				    #grep hello-hapi:.* deployment-hello-hapi.yaml
 				    #git config --global user.name “chloongloong”
 				    #git config --global user.email "loongch@yahoo.com.sg"
 				    #git add deployment-hello-hapi.yaml
-				    #git commit -m "Updated deployment Manifest to image ver $IMAGE_TAG"
+				    #git commit -m "Updated deployment Manifest to image ver ${params.IMAGE_TAG}"
 				   """
 			       //withCredentials([gitUsernamePassword(credentialsId: 'GITHUB-PAT-USERPASS', gitToolName: 'Default')]) {
 				   //sh "git push https://github.com/chloongloong/hello-api-manifest main"
