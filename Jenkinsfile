@@ -40,7 +40,8 @@ pipeline {
 				    git commit -m "Updated deployment Manifest to image ver ${params.IMAGE_TAG}"
 				   """
 			       withCredentials([gitUsernamePassword(credentialsId: 'GITHUB-PAT-USERPASS', gitToolName: 'Default')]) {
-				   sh "git push https://github.com/chloongloong/hello-api-manifest main"
+				   //sh "git push https://github.com/chloongloong/hello-api-manifest main"
+				   sh "git push origin main"
 			       }
 			}
 		}
