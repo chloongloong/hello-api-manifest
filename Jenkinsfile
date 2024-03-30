@@ -14,6 +14,7 @@ pipeline {
 //One way to notice this is when running the job, watch the console and will notice it.
 //So remember that if set in the UI to checkout from git already, then Jenkinsfile no need to add again.
 //
+*/
 	stage('Cloning Repo') {
 	    steps {
 		script {
@@ -21,7 +22,6 @@ pipeline {
 		}
 	    }
 	}
-*/
 
 	stage('CD - Update Manifest with new version number for the newly built image') {
  
